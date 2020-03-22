@@ -12,7 +12,7 @@ body {
 	position: auto;	
 	/* background-color: linen; */
 }
-#headline {
+.header {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.6em;
 	font-weight: normal;
@@ -30,7 +30,7 @@ h2 {
 </style>
 
 <body>
-<div id="headline">
+<div class="header">
 	Fedeklubben Stubben
 </div>
 <Tabs>
