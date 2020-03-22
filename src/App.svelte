@@ -8,9 +8,11 @@ body {
   font: normal 16px/1 Verdana;
   box-sizing: content-box;
   padding: 0px;
-	margin: -8px;
+	margin-top: -8px;
+	margin-left: -8px;
 	position: auto;	
-	/* background-color: linen; */
+	width:  103%;
+	height: 101%;
 }
 .header {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
