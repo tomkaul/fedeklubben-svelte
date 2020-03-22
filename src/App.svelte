@@ -3,15 +3,36 @@
 	import data from './data.js';
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</svelte:head>
+<style>
+body {
+  font: normal 16px/1 Verdana;
+  box-sizing: content-box;
+  padding: 0px;
+	margin: -8px;
+	position: auto;	
+	/* background-color: linen; */
+}
+#headline {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.6em;
+	font-weight: normal;
+	color: white;
+	background-color: #800000;
+	margin-left: 20px;
+	padding: 10px;
+	margin: 0 0 0px 0px;
+	/* border: 1px solid red; */
+}
+h2 {
+	margin-left: 20px;
+	font-weight: normal;
+}
+</style>
 
-<h1>
+<body>
+<div id="headline">
 	Fedeklubben Stubben
-</h1>
+</div>
 <Tabs>
 	<TabList>
 		<Tab>Vægt-kurver</Tab>
@@ -40,3 +61,4 @@
 		<Music/>
 	</TabPanel>
 </Tabs>
+</body>

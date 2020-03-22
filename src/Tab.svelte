@@ -12,15 +12,17 @@
 	button {
 		background: none;
 		border: none;
-		border-bottom: 2px solid white;
+		/* border-bottom: 2px solid white; */
 		border-radius: 0;
 		margin: 0;
 		color: #999;
 	}
 	
 	.selected {
-		border-bottom: 3px solid teal;
-		color: #111;
+		/* border-bottom: 3px solid teal; */
+		color: white;
+		background-color: darkgreen;
+		font-weight: normal;
 	}
 </style>
 

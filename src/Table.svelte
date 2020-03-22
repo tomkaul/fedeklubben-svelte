@@ -20,9 +20,9 @@
   }
   // Now the content
   const rowGen = {
-    'Startvægt': get_start_weight,
-    'Nuv.vægt' : get_current_weight,
-    'Vægttab'  : get_weight_loss
+    'Startvægt (kg)': get_start_weight,
+    'Nuv.vægt (kg)' : get_current_weight,
+    'Vægttab (kg)'  : get_weight_loss
   };
   var rows = [];
   var i = 0;
@@ -36,12 +36,28 @@
   }
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</svelte:head>
+<style>
+.table {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+.table td, .table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 
 <table class="table table-striped">
   <thead class='thead-dark'>

@@ -2,8 +2,16 @@
 	import AudioPlayer, { stopAll } from './AudioPlayer.svelte';
 </script>
 
+<style>
+	button { 
+		margin: 0 0 1em 1em; 
+		background-color: darkgreen;
+		color: white;
+	}
+</style>
+
 <button on:click={stopAll}>
-	stop all audio
+	Stop den larm!
 </button>
 
 <!-- https://musopen.org/music/9862-the-blue-danube-op-314/ -->

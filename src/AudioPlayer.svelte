@@ -32,8 +32,8 @@
 </script>
 
 <style>
-	article { margin: 0 0 1em 0; max-width: 800px }
-	h2, p { margin: 0 0 0.3em 0; }
+	article { margin: 0 0 1em 1em; max-width: 800px }
+	h2, p { margin: 0 0 0.3em 0; font-weight: normal; }
 	audio { width: 100%; margin: 0.5em 0 1em 0; }
 	.playing { color: #ff3e00; }
 </style>
