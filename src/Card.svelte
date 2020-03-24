@@ -4,7 +4,10 @@
 </script>
 
 <style>
-  /* Something to make it look pretty */
+  h3  {
+    /* margin-left: 20px; */
+	  font-weight: normal;
+  }
 </style>
 
 <section>

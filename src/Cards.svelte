@@ -2,26 +2,26 @@
   import Card from "./Card.svelte";
 
   const items = [
+		{
+			title: "Fede Thomas ligger sidst",
+			description: "Thomas førbillede",
+			imageUrl: "images/FedeAbe2.JPG"
+		},
     {
-      title: "Claus",
+      title: "Så kommer Claus",
       description: "Claus førbillede",
       imageUrl: "images/FedeAbe1.JPG"
     },
-    {
-      title: "Jacob",
-      description: "Jacob førbillede",
-      imageUrl: "images/FedeSeal.JPG"
-    },
 		{
-			title: "Manse",
+			title: "Derpå Manse",
 			description: "Manse førbillede",
 			imageUrl: "images/FedeManse.JPG"
 		},
-		{
-			title: "Thomas",
-			description: "Thomas førbillede",
-			imageUrl: "images/FedeAbe2.JPG"
-		}
+    {
+      title: "Jacob er gået i udbrud",
+      description: "Jacob førbillede",
+      imageUrl: "images/FedeSeal.JPG"
+    },
   ];
 </script>
 
