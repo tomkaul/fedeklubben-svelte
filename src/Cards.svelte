@@ -3,14 +3,14 @@
 
   const items = [
 		{
-			title: "Fede Manse ligger sidst",
-			description: "Manse førbillede",
-			imageUrl: "images/FedeManse.JPG"
-		},
-    {
-      title: "Så kommer Thomas",
+			title: "Fede Thomas ligger sidst",
 			description: "Thomas førbillede",
 			imageUrl: "images/FedeAbe2.JPG"
+		},
+    {
+      title: "Så kommer Manse",
+			description: "Manse førbillede",
+			imageUrl: "images/FedeManse.JPG"
     },
 		{
 			title: "Derpå Claus",
