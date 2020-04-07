@@ -22,6 +22,7 @@ export default {
     { x: 12, y: -1.1 },
     { x: 13, y: -1.1 },
     { x: 14, y: -1.3 },
+    { x: 15, y: -1.7 },
   ]},
   'Thomas': {start_weight: 96.4,
     data: [
