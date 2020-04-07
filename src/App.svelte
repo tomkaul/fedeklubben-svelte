@@ -8,8 +8,8 @@ body {
   font: normal 16px/1 Verdana;
   box-sizing: content-box;
   padding: 0px;
-	margin-top: -8px;
-	margin-left: -8px;
+	margin-top: 0px;
+	margin-left: 0px;
 	position: auto;	
 	width:  103%;
 	height: 101%;

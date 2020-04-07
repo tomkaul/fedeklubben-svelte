@@ -18,7 +18,7 @@
       imageUrl: "images/FedeSeal.JPG"
 		},
     {
-      title: "Claus er gået i udbrud: -4.4kg",
+      title: "Claus er gået i udbrud: -4.6kg",
       description: "Claus førbillede",
       imageUrl: "images/FedeAbe1.JPG"
     },
