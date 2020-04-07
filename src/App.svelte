@@ -1,6 +1,15 @@
 <script>
 	import { Tabs, TabList, TabPanel, Tab, Music, Cards, Plot, Table } from './tabs.js';
 	import data from './data.js';
+
+  // // Misc functions
+  // function get_weight_loss(key) {
+  //   return (data[key].start_weight - data[key].data[data[key].data.length-1].y).toFixed(1);
+  // };
+	// // Sort after weight loss
+  // export let names = Object.keys(data);
+  // names.sort(function (a,b) {return get_weight_loss(a)-get_weight_loss(b)});
+
 </script>
 
 <style>
@@ -45,7 +54,7 @@ h2 {
 
 	<TabPanel>
 		<h2>Vægt-plot for de fede dyr</h2>
-		<Plot dataPoints = {data}/>
+		<Plot data = {data}/>
 	</TabPanel>
 
 	<TabPanel>
@@ -55,7 +64,7 @@ h2 {
 
 	<TabPanel>
 		<h2>Billeder af fede dyr</h2>
-		<Cards/>
+		<Cards data = {data}/>
 	</TabPanel>
 
 	<TabPanel>

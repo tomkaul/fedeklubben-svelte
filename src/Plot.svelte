@@ -4,7 +4,7 @@
 	let mounted = false;
 	let chart;
 
-	export let dataPoints;
+	export let data;
 	
 	function canvasLoaded () {
 		canvasReady = true;
@@ -22,12 +22,14 @@
 	
 	// Create plot data
 	let plotData = []
-	for (let key in dataPoints) {
+	for (let key in data) {
 		plotData.push({
 			type: "line",
 			showInLegend: true,
 			name: key,
-			dataPoints: dataPoints[key].data
+			dataPoints: data[key].data.map(function(val){ 
+            return {x: val.x, y: val.y - data[key].start_weight}; 
+        })
 		});
 	};
 	// Append goals
