@@ -31,6 +31,7 @@ export default {
     { x: 15, y: 106.5 },
     { x: 16, y: 107.2 },
     { x: 17, y: 107.1 },
+    { x: 18, y: 106.6 },
   ]},
   'Thomas': {start_weight: 96.4, image: "images/FedeAbe2.JPG",
     data: [
