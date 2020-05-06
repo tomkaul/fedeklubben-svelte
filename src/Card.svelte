@@ -3,13 +3,6 @@
   export let imageUrl;
 </script>
 
-<style>
-  h3  {
-    margin-left: 10px;
-	  font-weight: normal;
-  }
-</style>
-
 <section>
   <h5>
     {title}

@@ -25,10 +25,6 @@ body {
 	margin: 0 0 0px 0px;
 	/* border: 1px solid red; */
 }
-h2 {
-	margin-left: 20px;
-	font-weight: normal;
-}
 </style>
 
 <svelte:head>
