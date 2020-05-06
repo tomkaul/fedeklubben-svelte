@@ -10,6 +10,7 @@ export default {
     { x: 16, y: 86.9 },
     { x: 17, y: 88.2 },
     { x: 18, y: 87.8 },
+    { x: 19, y: 89.2 },
   ]},
   'Jaksen': {start_weight: 88.7, image: "images/FedeSeal.JPG",
     data: [
@@ -21,6 +22,7 @@ export default {
     { x: 16, y: 85.9 },
     { x: 17, y: 84.9 },
     { x: 18, y: 84.2 },
+    { x: 19, y: 84.1 },
   ]},
   'Manse': {start_weight: 108.2, image: "images/FedeManse.JPG",
     data: [
@@ -32,6 +34,7 @@ export default {
     { x: 16, y: 107.2 },
     { x: 17, y: 107.1 },
     { x: 18, y: 106.6 },
+    { x: 19, y: 105.4 },
   ]},
   'Thomas': {start_weight: 96.4, image: "images/FedeAbe2.JPG",
     data: [
@@ -43,5 +46,6 @@ export default {
     { x: 16, y: 95.2 },
     { x: 17, y: 94.4 },
     { x: 18, y: 94.5 },
+    { x: 19, y: 95.1 },
   ]},
 };
