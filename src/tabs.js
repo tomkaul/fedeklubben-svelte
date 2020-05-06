@@ -6,3 +6,4 @@ export { default as Music } from './Music.svelte';
 export { default as Cards } from './Cards.svelte';
 export { default as Plot } from './Plot.svelte';
 export { default as Table } from './Table.svelte';
+export { default as Login } from './Login.svelte';

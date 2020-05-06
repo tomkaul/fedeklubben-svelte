@@ -1,15 +1,6 @@
 <script>
-	import { Tabs, TabList, TabPanel, Tab, Music, Cards, Plot, Table } from './tabs.js';
+	import { Cards, Music, Plot, Login, Tabs, TabList, TabPanel, Tab, Table } from './tabs.js';
 	import data from './data.js';
-
-  // // Misc functions
-  // function get_weight_loss(key) {
-  //   return (data[key].start_weight - data[key].data[data[key].data.length-1].y).toFixed(1);
-  // };
-	// // Sort after weight loss
-  // export let names = Object.keys(data);
-  // names.sort(function (a,b) {return get_weight_loss(a)-get_weight_loss(b)});
-
 </script>
 
 <style>
@@ -40,6 +31,10 @@ h2 {
 }
 </style>
 
+<svelte:head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</svelte:head>
+
 <body>
 <div class="header">
 	Fedeklubben Stubben
@@ -49,27 +44,33 @@ h2 {
 		<Tab>Vægt-kurver</Tab>
 		<Tab>Vægt-tabel</Tab>
 		<Tab>Fede Dyr</Tab>
-		<Tab>Musik</Tab>
+		<!-- <Tab>Musik</Tab> -->
+		<Tab>Login</Tab>
 	</TabList>
 
 	<TabPanel>
-		<h2>Vægt-plot for de fede dyr</h2>
+		<h4>Vægt-plot for de fede dyr</h4>
 		<Plot data = {data}/>
 	</TabPanel>
 
 	<TabPanel>
-		<h2>Vægt-tabel for de fede dyr</h2>
+		<h4>Vægt-tabel for de fede dyr</h4>
 		<Table data = {data}/>
 	</TabPanel>
 
 	<TabPanel>
-		<h2>Billeder af fede dyr</h2>
+		<h4>Billeder af fede dyr</h4>
 		<Cards data = {data}/>
 	</TabPanel>
 
-	<TabPanel>
-		<h2>Slanke-musik for fede dyr</h2>
+	<!-- <TabPanel>
+		<h4>Slanke-musik for fede dyr</h4>
 		<Music/>
+	</TabPanel> -->
+
+	<TabPanel>
+		<h4>Log et fedt dyr ind</h4>
+		<Login/>
 	</TabPanel>
 </Tabs>
 </body>

@@ -11,11 +11,11 @@
 </style>
 
 <section>
-  <h3>
+  <h5>
     {title}
 		<br>
     <img src={imageUrl} alt="Avatar for {title}" style="width: 18rem;"/>
-  </h3>
+  </h5>
 
   <div>
     <slot>

@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	
 	let canvasReady = false;
 	let mounted = false;
 	let chart;

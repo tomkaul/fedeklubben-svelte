@@ -33,13 +33,12 @@
 
 <style>
 	article { margin: 0 0 1em 1em; max-width: 800px }
-	h2, p { margin: 0 0 0.3em 0; font-weight: normal; }
 	audio { width: 100%; margin: 0.5em 0 1em 0; }
 	.playing { color: #ff3e00; }
 </style>
 
 <article class:playing={!paused}>
-	<h2>{title}</h2>
+	<h4>{title}</h4>
 	<p><strong>{composer}</strong> / performed by {performer}</p>
 
 	<audio
