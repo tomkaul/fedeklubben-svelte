@@ -1,6 +1,15 @@
 <script>
 	import { Cards, Music, Plot, Login, Tabs, TabList, TabPanel, Tab, Table } from './tabs.js';
 	import data from './data.js';
+
+	// Hold the user
+	let user = null;
+
+	// Save user
+	function saveUser(event) {
+		user = event.detail;
+		// console.log(event.detail);		
+	}
 </script>
 
 <style>
@@ -65,8 +74,12 @@ body {
 	</TabPanel> -->
 
 	<TabPanel>
+		{#if user}
+		<h4>Hej {user.displayName} dit fede dyr</h4>
+		{:else}
 		<h4>Log et fedt dyr ind</h4>
-		<Login/>
+		{/if}
+		<Login user = {user} on:user={saveUser}/>
 	</TabPanel>
 </Tabs>
 </body>
