@@ -1,11 +1,12 @@
 <script>
   import Card from "./Card.svelte";
   export let data;
+  export let images;
   // export let names;
 
   // Misc functions
   function get_weight_loss(key) {
-    return (data[key].start_weight - data[key].data[data[key].data.length-1].y).toFixed(1);
+    return (data[key].data[0].y - data[key].data[data[key].data.length-1].y).toFixed(1);
   };
 	// Sort after weight loss
   let names = Object.keys(data);
@@ -14,22 +15,22 @@
 		{
 			title: "Fede " + names[0] + " ligger sidst: -" + get_weight_loss(names[0]) + 'kg',
 			description: "Førbillede",
-			imageUrl: data[names[0]].image
+			imageUrl: images[names[0]].image
 		},
     {
       title: "Så kommer " + names[1] + ": -" + get_weight_loss(names[1]) + 'kg',
 			description: "Førbillede",
-			imageUrl: data[names[1]].image
+			imageUrl: images[names[1]].image
     },
 		{
 			title: "Derpå " + names[2] + ": -" + get_weight_loss(names[2]) + 'kg',
       description: "Førbillede",
-      imageUrl: data[names[2]].image
+      imageUrl: images[names[2]].image
 		},
     {
       title: names[3] + " er gået i udbrud: -" + get_weight_loss(names[3]) + 'kg',
       description: "Claus førbillede",
-      imageUrl: data[names[3]].image
+      imageUrl: images[names[3]].image
     },
   ];
 </script>

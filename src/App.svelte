@@ -1,14 +1,39 @@
 <script>
+	import { onMount } from 'svelte';
 	import { Cards, Music, Plot, Login, Tabs, TabList, TabPanel, Tab, Table } from './tabs.js';
-	import data from './data.js';
+	import images from './data.js';
+  import { db } from "./firebase";
 
 	// Hold the user
 	let user = null;
+
+	// Hold the data
+	let data = null;
 
 	// Save user
 	function saveUser(event) {
 		user = event.detail;
 		// console.log(event.detail);		
+	}
+
+	// Load data
+	onMount(() => {
+		getData();
+	});
+	function getData() {
+		db.collection("plotData")
+			.get()
+			.then(querySnapshot => {
+				let dataX = {};
+				querySnapshot.forEach(doc => {
+					dataX[doc.id] = {data: doc.data().data };
+					// data[doc.id].data = doc.data().data;
+				});
+				data = dataX;
+			})
+			.catch(error => {
+				console.log("Error getting documents: ", error);
+			});
 	}
 </script>
 
@@ -50,7 +75,7 @@ body {
 		<Tab>Vægt-tabel</Tab>
 		<Tab>Fede Dyr</Tab>
 		<!-- <Tab>Musik</Tab> -->
-		<Tab>Login</Tab>
+		<Tab>{user ? "Profil" : "Login"}</Tab>
 	</TabList>
 
 	<TabPanel>
@@ -65,7 +90,7 @@ body {
 
 	<TabPanel>
 		<h4>Billeder af fede dyr</h4>
-		<Cards data = {data}/>
+		<Cards data = {data} images={images}/>
 	</TabPanel>
 
 	<!-- <TabPanel>
@@ -79,7 +104,7 @@ body {
 		{:else}
 		<h4>Log et fedt dyr ind</h4>
 		{/if}
-		<Login user = {user} on:user={saveUser}/>
+		<Login user = {user} data = {data} on:user={saveUser} on:data={getData}/>
 	</TabPanel>
 </Tabs>
 </body>

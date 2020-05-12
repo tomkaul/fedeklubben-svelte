@@ -3,13 +3,13 @@
 
   // Misc functions
   function get_start_weight(key) {
-    return data[key].start_weight.toFixed(1);
+    return data[key].data[0].y.toFixed(1);
   };
   function get_current_weight(key) {
     return (data[key].data[data[key].data.length-1].y).toFixed(1);
   };
   function get_weight_loss(key) {
-    return (data[key].start_weight - data[key].data[data[key].data.length-1].y).toFixed(1);
+    return (data[key].data[0].y - data[key].data[data[key].data.length-1].y).toFixed(1);
   };
 
   // Create table data, first a header row

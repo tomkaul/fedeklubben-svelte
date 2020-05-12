@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  // import AddData from './AddData.svelte';
   import {  Button, 
             Form, 
             FormGroup, 
@@ -9,17 +10,31 @@
             Toast, 
             ToastBody, 
             ToastHeader } from 'sveltestrap';
-  import { fb } from "../firebase";
+  import { db, fb } from "../firebase";
   import Card from "./Card.svelte";
   
   // Props
   export let user = null;
+  export let data = null;
 
   // Hold data for login
   let userData = {
     email: "",
     password: ""
   };
+
+  // Can data be added?
+  let canDataBeAdded = false;
+  let newWeight = null;
+  $: {
+    if (user && data) {
+      let name = user.displayName;
+      let dd = data[user.displayName].data;
+      let lastDataWeek = dd[dd.length - 1].x;
+      // newWeight = dd[dd.length - 1].y;
+      canDataBeAdded = lastDataWeek < getCurrentWeekNumber();
+    }
+  }
 
   // Event: Send back user to parent
   const dispatch = createEventDispatcher();
@@ -62,13 +77,49 @@
         console.log(err);
       });
   }
+  // Send new weight data
+  function sendWeight() {
+    let name = user.displayName;
+    let dd = { ...data[user.displayName] };
+    dd.data.push({
+      x: getCurrentWeekNumber(),
+      y: newWeight
+    });
+    console.log(dd);
+    db.collection("plotData")
+      .doc(user.displayName)
+      .update(dd)
+      .then(() => {
+        console.log("Added data to " + data.id);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    // Send data event to parent
+    dispatch("data", {});
+  }
+  // Check for week number
+  function getCurrentWeekNumber() {
+    // Get week number (2020)
+    let date = new Date();
+    // eslint-disable-next-line prettier/prettier
+    let wn = Math.ceil((((Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000 + 2) / 7));
+    // console.log(wn);
+    return wn;
+  }
 </script>
 
 {#if user}
-	<p>Hello {user.displayName}</p>
-  <Card title="Her er dit foto" imageUrl={user.photoURL}>
-    <!-- <hr /> -->
-  </Card>
+  {#if canDataBeAdded}
+  <p>Så kan der tastes vægt-data ind!</p>
+  <hr>
+  Uge {getCurrentWeekNumber()}: 
+  <input type="number" bind:value={newWeight}>
+  <Button color="success" on:click={sendWeight}>Send</Button>
+  <hr>
+  {/if}
+  <!-- <AddData user = {user} data = {data}> /> -->
+  <Card title="Her er Fede-{user.displayName}" imageUrl={user.photoURL} />
 	<Button color="danger" on:click={logout}>
 		Logout
 	</Button>
