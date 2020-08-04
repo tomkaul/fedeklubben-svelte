@@ -46,7 +46,8 @@
 					lineDashType: "dash",
 					dataPoints: [
 						{ x: 11, y: 0 },
-						{ x: 31, y: -10 }
+						{ x: 31, y: -10 },
+						{ x: 50, y: -10 }
 					]
 				});
 

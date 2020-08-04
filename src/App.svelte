@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { Cards, Music, Plot, Login, Tabs, TabList, TabPanel, Tab, Table } from './tabs.js';
 	import images from './data.js';
   import { db } from "./firebase";
@@ -17,9 +17,21 @@
 	}
 
 	// Load data
+	let listener = null;
+	// Add listener to data
 	onMount(() => {
-		getData();
+		// getData();
+		listener = db.collection("plotData").onSnapshot(
+      () => { 
+				getData();
+      },
+			error => { 
+				console.log(error)
+			}
+		);
 	});
+	// Kill listener
+	onDestroy(() => listener());
 	function getData() {
 		db.collection("plotData")
 			.get()
@@ -30,6 +42,7 @@
 					// data[doc.id].data = doc.data().data;
 				});
 				data = dataX;
+				console.log("Loaded Data!");
 			})
 			.catch(error => {
 				console.log("Error getting documents: ", error);
